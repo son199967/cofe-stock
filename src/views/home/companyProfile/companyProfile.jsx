@@ -125,7 +125,7 @@ const CompanyProfile = ({data}) => {
     }, [step1, time, step2, step3, step4, step5, step6, data, year, eps, bv, pe, roa, roe, ros, gos, dar])
 
     const fetch1 = (i) => {
-        debugger
+
         if (i >= 3 && i < step1.length) {
             console.log(i, "index")
             let data = {
@@ -171,7 +171,7 @@ const CompanyProfile = ({data}) => {
     }
 
     const fetch2 = (i) => {
-        debugger
+
         if (i >= 3 && i < step1.length) {
             console.log(i, "index")
             let data = {

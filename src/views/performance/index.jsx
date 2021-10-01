@@ -9,7 +9,7 @@ const Performance = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [dataGrossReturn, setDataGrossReturn] = useState([]);
-    let url = "/price/calculate?fromTime=2020-06-01&day=30"
+
 
 
     useEffect(() => {
@@ -32,12 +32,13 @@ const Performance = () => {
             })
             .catch((err) => {
                 console.log(err)
-                debugger
+
             })
     }
 
     const onSearch = (value) => {
-        debugger
+        let url = "/price/calculate?fromTime=2020-06-01&day=30&money=100000&risk=0.2&reDay=4"
+
         setLoading(true);
         if (value) {
             if (value.sym.length > 0) {
@@ -47,14 +48,15 @@ const Performance = () => {
             } else {
                 url = url.concat(`&symbol=FPT`)
             }
+            console.log(url)
         } else {
-            url = "/price/calculate?fromTime=2020-06-01&symbol=FPT&day=30"
+            url = "/price/calculate?fromTime=2020-06-01&symbol=FPT&day=30&money=100000&risk=0.2&reDay=4"
         }
 
         axiosInstance
             .get(url)
             .then((res) => {
-                debugger
+
                 setData(res.data)
                 setLoading(false)
             })

@@ -3,7 +3,7 @@ import {Row, Col, Spin} from "antd";
 import axiosInstance from "../../../axios";
 import {Area} from "@ant-design/charts";
 
-const Result = ({data}) => {
+const Result = ({data, loading}) => {
 
 
     var config = {
@@ -60,14 +60,14 @@ const Result = ({data}) => {
 
     return (
         <>
-            {/*<Spin spinning={loading}>*/}
+            <Spin spinning={loading}>
 
 
                 <h6>Cumulative LOG Gross Returns</h6>
                 <Area  {...config1} />
 
 
-            {/*</Spin>*/}
+            </Spin>
 
         </>
     )

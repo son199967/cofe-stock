@@ -7,34 +7,36 @@ import axiosInstance from "../../axios";
 
 const BackTest = () => {
     const [data, setData] = useState([])
+    const [loading, setLoading] = useState(true)
 
-    useEffect(()=>{
+    useEffect(() => {
         onSearch(null)
-    },[])
+    }, [])
 
     const onSearch = (value) => {
-
-        if(value){
+        setLoading(true)
+        if (value) {
             console.log(value)
             axiosInstance
                 .get(`/price/loadtest?fromTime=2016-01-01&symbol=FPT&day=${value.day}&money=${value.money}&risk=${value.risk}&reDay=${value.reDay}`)
                 .then((res) => {
                     setData(res.data)
-                    debugger
+                    setLoading(false)
+
                 })
-        }
-        else {
+        } else {
             axiosInstance
                 .get("/price/loadtest?fromTime=2016-01-01&symbol=FPT&day=30&money=100000&risk=0.2&reDay=4")
                 .then((res) => {
                     setData(res.data)
-                    debugger
+                    setLoading(false)
+
                 })
         }
     }
 
 
-    return(
+    return (
         <>
             <div className="container">
                 <Row gutter={24}>
@@ -43,11 +45,11 @@ const BackTest = () => {
                     </Col>
                     <Col span={16}>
                         <Result
-                        data={data}
+                            data={data}
+                            loading={loading}
                         ></Result>
                     </Col>
                 </Row>
-
 
 
             </div>

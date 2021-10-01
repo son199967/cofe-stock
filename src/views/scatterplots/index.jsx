@@ -8,13 +8,14 @@ import axiosInstance from "../../axios";
 const Scatterplots = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true)
-    let url = `/price/calculate?fromTime=2020-01-01&money=100000&risk=0.12`;
+
 
     useEffect(() => {
         onSearch(null)
     }, [])
 
     const onSearch = (value) => {
+        let url = `/price/calculate?fromTime=2020-01-01&money=100000&risk=0.12&money=100000&risk=0.2&reDay=4`;
         setLoading(true);
         if (value) {
             url = url.concat(value.day ? `&day=${value.day}` : "&day=")
@@ -26,13 +27,12 @@ const Scatterplots = () => {
                 url = url.concat(`&symbol=FPT`)
             }
         } else {
-            url = "/price/calculate?fromTime=2020-01-01&symbol=FPT&day=100&money=100000&risk=0.12"
+            url = "/price/calculate?fromTime=2020-01-01&symbol=FPT&day=100&money=100000&risk=0.12&reDay=4"
         }
 
         axiosInstance
             .get(url)
             .then((res) => {
-                debugger
                 setData(res.data)
                 setLoading(false)
             })

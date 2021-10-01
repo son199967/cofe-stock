@@ -14,7 +14,7 @@ const Search = ({onSearch}) => {
 
 
     const onFinish = () => {
-        debugger
+
         onSearch({
             day: volatilityEstimationWindow,
             money: initialEquity,
