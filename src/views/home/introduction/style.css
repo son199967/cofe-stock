@@ -1,0 +1,45 @@
+.price{
+  font-size: 27px;
+  font-weight: bold;
+  margin: 30px 0 0;
+  color: #CC0000 !important;
+}
+.dltlu-time {
+  color: #999;
+  font-size: 11px;
+}
+
+.dltlu-down {
+  /*background-image: url("src/assets/icons/Down_h.png");*/
+  text-align: left;
+  padding: 2px 0 2px 20px;
+  margin: 10px 0 0 30px;
+}
+
+.v1{
+  float: left;
+  margin-right: 10px;
+  color: #003366;
+  font-weight: bold;
+  margin-top: 3px;
+}
+.v2{
+  float: right;
+  color: #222;
+  font-size: 16px;
+  text-align: right;
+  font-weight: bold;
+  /*width: 85px;*/
+}
+.inline-block{
+  display: inline-block;
+  width: 100%;
+  margin: 1px auto;
+  font: bold 13px Arial, Helvetica, sans-serif;
+}
+
+.l{
+  float: left;
+  color: #003366;
+  white-space: nowrap;
+}
