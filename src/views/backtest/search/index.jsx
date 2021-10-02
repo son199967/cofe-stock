@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Button, Form, Select, Slider} from "antd";
+import "./style.css"
 
 const Search = ({onSearch}) => {
 
@@ -35,14 +36,18 @@ const Search = ({onSearch}) => {
                     <Form.Item
                         label="Initial Equity"
                     >
-                        <div style={{marginTop: 40}}>
+                        <div >
                             <Slider
                                 value={initialEquity}
                                 min={10000}
                                 max={1000000}
                                 step={1000}
                                 tooltipVisible
+                                // getTooltipPopupContainer={(value => {
+                                //     return(<div style={{backgroundColor :"red"}}>{value}</div>)
+                                // })}
                                 onChange={(value => setInitialEquity(value))}/>
+
                         </div>
 
                     </Form.Item>
@@ -50,7 +55,7 @@ const Search = ({onSearch}) => {
                     <Form.Item
                         label="perShareCommission"
                     >
-                        <div style={{marginTop: 40}}>
+                        <div>
                             <Slider
                                 value={perShareCommission}
                                 tooltipVisible
@@ -64,7 +69,7 @@ const Search = ({onSearch}) => {
                     <Form.Item
                         label="minimumCommissionPerOrder"
                     >
-                        <div style={{marginTop: 40}}>
+                        <div>
                             <Slider
                                 value={minimumCommissionPerOrder}
                                 tooltipVisible
@@ -78,7 +83,7 @@ const Search = ({onSearch}) => {
                     <Form.Item
                         label="targetAssetVolatility"
                     >
-                        <div style={{marginTop: 40}}>
+                        <div >
                             <Slider
                                 value={targetAssetVolatility}
                                 tooltipVisible
@@ -92,7 +97,7 @@ const Search = ({onSearch}) => {
                     <Form.Item
                         label="volatilityEstimationWindow"
                     >
-                        <div style={{marginTop: 40}}>
+                        <div >
                             <Slider
                                 value={volatilityEstimationWindow}
                                 tooltipVisible
@@ -107,7 +112,7 @@ const Search = ({onSearch}) => {
                     <Form.Item
                         label="rebalanceFrequency"
                     >
-                        <div style={{marginTop: 40}}>
+                        <div >
                             <Slider
                                 value={rebalanceFrequency}
                                 tooltipVisible
@@ -122,7 +127,7 @@ const Search = ({onSearch}) => {
                     <Form.Item
                         label="frequencyToCapitaliseProfits"
                     >
-                        <div style={{marginTop: 40}}>
+                        <div >
                             <Slider
                                 value={frequencyToCapitaliseProfits}
                                 tooltipVisible

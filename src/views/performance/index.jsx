@@ -16,26 +16,6 @@ const Performance = () => {
         onSearch(null)
     },[])
 
-    const fetch = () => {
-        setLoading(true)
-        axiosInstance.get("/price/calculate?fromTime=2020-06-01&symbol=FPT&symbol=VCB&symbol=BID&day=30")
-            .then((res) => {
-                console.log(data);
-                setData(res.data)
-                setDataGrossReturn(res.data.filter((item) => {
-                    if(item.sym==="FPT"){
-                        return item
-                    }
-                }))
-
-                setLoading(false)
-            })
-            .catch((err) => {
-                console.log(err)
-
-            })
-    }
-
     const onSearch = (value) => {
         let url = "/price/calculate?fromTime=2020-06-01&day=30&money=100000&risk=0.2&reDay=4"
 
@@ -58,6 +38,12 @@ const Performance = () => {
             .then((res) => {
 
                 setData(res.data)
+                setDataGrossReturn(res.data.filter((item)=>{
+                    if(item.sym==="FPT"){
+                        return item
+                    }
+                }))
+
                 setLoading(false)
             })
     }

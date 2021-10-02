@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Row, Col, Spin} from "antd";
+import {Row, Col, Spin, Table} from "antd";
 import axiosInstance from "../../../axios";
 import {Area} from "@ant-design/charts";
 
@@ -39,7 +39,7 @@ const Result = ({data, loading}) => {
         yField: "priceStock",
         seriesField: "sym",
         color: ['#82d1de', '#cb302d', '#e3ca8c'],
-        areaStyle: { fillOpacity: 0.7 },
+        areaStyle: {fillOpacity: 0.7},
         xAxis: {
             type: "time",
             mask: "MM/YYYY"
@@ -57,16 +57,11 @@ const Result = ({data, loading}) => {
     };
 
 
-
     return (
         <>
             <Spin spinning={loading}>
-
-
-                <h6>Cumulative LOG Gross Returns</h6>
                 <Area  {...config1} />
-
-
+                <br/>
             </Spin>
 
         </>

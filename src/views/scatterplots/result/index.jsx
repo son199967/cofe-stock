@@ -13,6 +13,10 @@ const Result = ({data,loading}) => {
         xField: "time",
         yField: "volatility",
         seriesField: "sym",
+        xAxis: {
+            type: "time",
+            mask: "DD/MM/YYYY"
+        },
 
     }
 

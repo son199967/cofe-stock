@@ -6,7 +6,7 @@ ul, li { list-style: none; margin: 0; padding: 0}
 .cursor { cursor: pointer;}
 html, body{ margin: 0; padding: 0 0 50px 0;}
 .container{ max-width: 1000px; margin: 0 auto; position: relative;}
-.header{ background: #2a6496;padding: 25px 15px;color: #fff; position: fixed; width: 100% ; z-index: 1}
+.header{ background: #2a6496;padding: 25px 15px;color: #fff; position: fixed; width: 100% ; z-index: 10000}
 .clear{ display: inline-block; clear: both;}
 .logo{ float: left; position: absolute; top: -18px }
 .logo a{ font-size: 20px; margin: 0; color: #fff;}

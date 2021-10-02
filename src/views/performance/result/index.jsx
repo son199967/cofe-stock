@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Row, Col, Spin} from "antd";
 import axiosInstance from "../../../axios";
 import {Line } from "@ant-design/charts";
+import "./style.css"
 
 const Result = ({data,dataGrossReturn,loading}) => {
 
@@ -72,9 +73,13 @@ const Result = ({data,dataGrossReturn,loading}) => {
         xField: "time",
         yField: "grossReturn",
         yAxis: {
-            min:90,
-            max:110
-        }
+            min:70,
+            max:130
+        },
+        xAxis: {
+            type: "time",
+            mask: "DD/MM/YYYY"
+        },
 
     }
 
@@ -84,9 +89,13 @@ const Result = ({data,dataGrossReturn,loading}) => {
         xField: "time",
         yField: "simpleReturn",
         yAxis: {
-            min:-10,
-            max:10
-        }
+            min:-30,
+            max:30
+        },
+        xAxis: {
+            type: "time",
+            mask: "DD/MM/YYYY"
+        },
 
     }
 
@@ -97,25 +106,27 @@ const Result = ({data,dataGrossReturn,loading}) => {
             <Spin spinning={loading}>
                 <Row gutter={24}>
                     <Col span={12}>
-                        <h6>CLose price</h6>
+                        <h3 className="center">Close price</h3>
                         <Line  {...config} />
                     </Col>
 
                     <Col span={12}>
 
-                        <h6>Cumulative LOG Gross Returns</h6>
+                        <h3 className="center">Cumulative LOG Gross Returns</h3>
                         <Line  {...config1} />
                     </Col>
 
 
                 </Row>
+                <br/>
+                <br/>
                 <Row gutter={24}>
                     <Col span={12}>
-                        <h6>Gross Return</h6>
+                        <h3 className="center">Gross Return</h3>
                         <Line {...configGrossReturn}/>
                     </Col>
                     <Col span={12}>
-                        <h6>Simple Return</h6>
+                        <h3 className="center">Simple Return</h3>
                         <Line {...configSimpleReturn}/>
                     </Col>
                 </Row>
